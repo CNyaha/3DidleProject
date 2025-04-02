@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("MP가 없습니다.");
         }
-        CurrentMp = Mathf.Min(CurrentMp - value, 0);
+        CurrentMp = Mathf.Max(CurrentMp - value, 0);
     }
     // 레벨업
     public void LevelUp()

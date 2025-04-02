@@ -41,9 +41,4 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        PlayerTransform = Player.gameObject.transform;
-    }
-
 }
