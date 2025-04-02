@@ -3,8 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UIType
+{
+    pause,
+    settings
+}
+
 public class MenuController : MonoBehaviour
 {
+    public UIType uiType;
     public Type type;
     public Vector3 targetPos;
     public float duration;
@@ -30,6 +37,7 @@ public class MenuController : MonoBehaviour
 
     public void MoveToTarget()
     {
+        Time.timeScale = 1;
         if (!isMove)
         {
             if (coroutine != null) StopCoroutine(coroutine);
@@ -48,9 +56,13 @@ public class MenuController : MonoBehaviour
                     transform.DOMove(targetPos, duration).SetEase(Ease.InOutCubic);
                     break;
             }
+
+            coroutine = StartCoroutine(WaitForOpen(duration));
         }
         else
         {
+            if (coroutine != null) StopCoroutine(coroutine);
+
             switch (type)
             {
                 case Type.Default:
@@ -70,9 +82,17 @@ public class MenuController : MonoBehaviour
         isMove = !isMove;
     }
 
+    IEnumerator WaitForOpen(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Time.timeScale = 0;
+    }
+
     IEnumerator WaitForClose(float duration)
     {
         yield return new WaitForSeconds(duration);
         gameObject.SetActive(false);
+        if (uiType == UIType.settings)
+            Time.timeScale = 0;
     }
 }
