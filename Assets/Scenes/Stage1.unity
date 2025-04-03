@@ -10675,26 +10675,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
-    - target: {fileID: 1851041763712250239, guid: 4805447a9aa6749419168c8e9ed264a6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7278494717237804823, guid: 4805447a9aa6749419168c8e9ed264a6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1296043786}
-    - target: {fileID: 7278494717237804823, guid: 4805447a9aa6749419168c8e9ed264a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActiveAllFalse
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278494717237804823, guid: 4805447a9aa6749419168c8e9ed264a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
