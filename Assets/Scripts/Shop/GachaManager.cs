@@ -31,6 +31,9 @@ public class GachaManager : MonoBehaviour
 
     private IEnumerator RollEffectCoroutine()
     {
+        Sprite originalSprite = rollingImage.sprite;
+
+
         float timer = 0f;
         Item lastShown = null;
 
@@ -47,6 +50,9 @@ public class GachaManager : MonoBehaviour
         InventoryUI.Instance.Refresh();
         // 결과창 띄우기
         GachaResultUI.Instance.Show(lastShown);
+
+        // 롤링 이미지 원래 상태로 되돌리기
+        rollingImage.sprite = originalSprite;
     }
     public void Close()
     {
