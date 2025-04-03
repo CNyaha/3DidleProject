@@ -100,6 +100,8 @@ public class SoundManager : Singleton<SoundManager>
     //오디오 볼륨 조절 이벤트 등록
     private void initAudioEvent()
     {
+        if (UIManager.Instance.masterVolume == null) return;
+
         UIManager.Instance.masterVolume.GetComponent<CallbackSliderCostomEvent>().UpdateMixerVolume += SetMasterVolume;
         UIManager.Instance.sfxVolume.GetComponent<CallbackSliderCostomEvent>().UpdateMixerVolume += SetSFXVolume;
         UIManager.Instance.bgmVolume.GetComponent<CallbackSliderCostomEvent>().UpdateMixerVolume += SetBGMVolume;

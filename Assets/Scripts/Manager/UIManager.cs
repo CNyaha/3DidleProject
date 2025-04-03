@@ -61,7 +61,8 @@ public class UIManager : Singleton<UIManager>
     protected override void Awake()
     {
         base.Awake();
-        btnExitInformation.onClick.AddListener(SetCloseInformationUI);
+        if (btnExitInformation != null)
+            btnExitInformation.onClick.AddListener(SetCloseInformationUI);
     }
 
     private void Update()
@@ -77,6 +78,8 @@ public class UIManager : Singleton<UIManager>
 
     private void LateUpdate()
     {
+        if (level == null) return;
+
         UpdateStat();
         UpdateCondition();
     }
