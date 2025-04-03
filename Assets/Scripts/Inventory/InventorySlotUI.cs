@@ -184,8 +184,7 @@ public class InventorySlotUI : MonoBehaviour,
 
     private void UseItem()
     {
-        Item tempItem = new Item(slot.item.Data);//TODO: 나중에 확인하고 교체 필요
-        tempItem.UseUsableItem();
+        slot.item.UseUsableItem();
 
         slot.quantity--;
 
